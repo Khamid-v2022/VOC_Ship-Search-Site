@@ -1,0 +1,59 @@
+
+.navbar {
+  font-size: 16px;
+  background-color: #3a3450;
+}
+.navbar-brand {
+  height: 70px;
+}
+
+.navbar-brand>img {
+  margin-top:  0;
+  height: 35px;
+}
+
+.navbar-nav {
+  margin-top: 15px;
+}
+.navbar-header {
+  min-width: 170px;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+  color: #ddd;
+}
+
+.navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: unset!important;
+  color: white;
+  font-weight: 600;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  border-bottom: 2px solid black;
+  padding-bottom: 0;
+}
+
+
+.btn-primary {
+  background-color: #3a3450;
+  border-color: #3a3450;
+}
+.dataTables_paginate .paginate_button.current, .dataTables_paginate .paginate_button.current:focus, .dataTables_paginate .paginate_button.current:hover{
+  background-color: #3a3450;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+  padding:  6px 10px;
+}
+
+.input-error{
+  outline: 1px solid red;
+}
