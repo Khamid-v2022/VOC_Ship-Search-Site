@@ -26,85 +26,95 @@
 	}
 </style>
 <!-- Content area -->
-<div class="content">
+<div class="container">
+	<div class="page-title">
+		<h1>Search Ships</h1>
+	</div>
 	<!-- Main charts -->
-	<div class="row">
-		<div class="col-lg-12">
-			<!-- Traffic sources -->
-			<div class="panel panel-flat">
-				<div class="panel-heading">
-					<h5 class="panel-title">Ships</h5>
-					<div class="heading-elements">
-						
-                	</div>
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="form-group col-md-4">
-							<label class="control-label" for="ship_name">Ship name:</label>
-							<select class="search-select-2" id="ship_name">
-								<option value=""></option>
-								<?php 
-								foreach($ship_names as $item)
-									echo '<option value="' . $item['ship_name'] . '">' . $item['ship_name'] . '</option>';
-								?>
-							</select>
-						</div>
-						<div class="form-group col-md-4">
-							<label class="control-label" for="ship_type">Ship type:</label>
-							<select class="search-select-2" id="ship_type">
-								<option value=""></option>
-								<?php 
-								foreach($ship_types as $item)
-									echo '<option value="' . $item['type_of_ship'] . '">' . $item['type_of_ship'] . '</option>';
-								?>
-							</select>
-						</div>
-						<div class="form-group col-md-4">
-							<label class="control-label" for="yard_build">Yard build:</label>
-							<select class="search-select-2" id="yard_build">
-								<option value=""></option>
-								<?php 
-								foreach($yard_build as $item){
-									echo '<option value="' . $item['yard_build'] . '">' . $item['yard_build'] . '</option>';
-								}
-								?>
-							</select>
-						</div>
-						
-					</div>
-					<div style="display: flex; justify-content: space-between;">
-						<div style="display: inline-block;">
-							<?php 
-								foreach(range('A', 'Z') as $char)
-								echo '<button class="btn btn-primary alphabet-btn" sel_key="' . $char . '">' . $char . '</button>';
-							?>
-						</div>
-						<div style="display: inline-block;">
-							<button class="btn btn-info" onclick="show_all()">Show All</button>
-						</div>
-					</div>
-					<div class="mt-10 text-right">
-						
-						<b>Total <span id="total_count">0</span> records</b>
-					</div>
-				</div>
-				
-				<table class="table datatable-ajax" id="data_table">
-					<thead>
-						<tr>
-							<th>Ship number</th>
-							<th>Ship name</th>
-							<th>Type of ship</th>
-							<th>Build year </th>
-							<th>Build yard</th>
-						</tr>
-					</thead>
-					<tbody id="table_content">	
-					</tbody>
-				</table>
+	<div>
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h5 class="panel-title">Ships</h5>
+				<div class="heading-elements">
+					
+            	</div>
 			</div>
-			<!-- /traffic sources -->
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label class="control-label" for="ship_name">Ship name:</label>
+						<select class="search-select-2" id="ship_name">
+							<option value=""></option>
+							<?php 
+							foreach($ship_names as $item)
+								echo '<option value="' . $item['ship_name'] . '">' . $item['ship_name'] . '</option>';
+							?>
+						</select>
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label" for="ship_type">Ship type:</label>
+						<select class="search-select-2" id="ship_type">
+							<option value=""></option>
+							<?php 
+							foreach($ship_types as $item)
+								echo '<option value="' . $item['type_of_ship'] . '">' . $item['type_of_ship'] . '</option>';
+							?>
+						</select>
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label" for="ship_wreck">Shipwreck:</label>
+						<select class="form-control" id="ship_wreck">
+							<option value=""></option>
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label" for="shipwreck_location">Shipwreck location:</label>
+						<input type="text" id="shipwreck_location" class="form-control">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label" for="yard_build">Yard build:</label>
+						<select class="search-select-2" id="yard_build">
+							<option value=""></option>
+							<?php 
+							foreach($yard_build as $item){
+								echo '<option value="' . $item['yard_build'] . '">' . $item['yard_build'] . '</option>';
+							}
+							?>
+						</select>
+					</div>
+					
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<div style="display: inline-block;">
+						<?php 
+							foreach(range('A', 'Z') as $char)
+							echo '<button class="btn btn-primary alphabet-btn" sel_key="' . $char . '">' . $char . '</button>';
+						?>
+					</div>
+					<div style="display: inline-block;">
+						<button class="btn btn-info" onclick="show_all()">Show All</button>
+					</div>
+				</div>
+				<div class="mt-10 text-right">
+					
+					<b>Total <span id="total_count">0</span> records</b>
+				</div>
+			</div>
+			
+			<table class="table datatable-ajax" id="data_table">
+				<thead>
+					<tr>
+						<th>Ship number</th>
+						<th>Ship name</th>
+						<th>Type of ship</th>
+						<th>Fate of ship </th>
+					</tr>
+				</thead>
+				<tbody id="table_content">	
+				</tbody>
+			</table>
 		</div>
 	</div>
 	<!-- /main charts -->

@@ -1,4 +1,6 @@
 var table = null;
+var send_request = true;
+
 $(function() {
    
     $.extend( $.fn.dataTable.defaults, {
@@ -29,8 +31,9 @@ $(function() {
         // width: 'auto'
     });
 
-    $('.search-select-2').on('change', function(){
-        reload_table();
+    $('.search-select-2, #ship_wreck, #shipwreck_location').on('change', function(){
+        if(send_request)
+            reload_table();
     })
 
     reload_table();
@@ -52,6 +55,8 @@ var reload_table = function(){
                 ship_name : $("#ship_name").val(),
                 ship_type : $("#ship_type").val(),
                 yard_build : $("#yard_build").val(),
+                shipwreck: $("#ship_wreck").val(),
+                wreck_region: $("#shipwreck_location").val(),
                 selected_key: selected_key
             },
             complete: function(data){
@@ -102,8 +107,12 @@ function show_ship(id){
 }
 
 function show_all(){
+    send_request = false;
     $('.alphabet-btn').removeClass('active');
+    $("#ship_wreck").val("");
+    $("#shipwreck_location").val("");
     $("#ship_name").val("").trigger("change");
     $("#ship_type").val("").trigger("change");
+    send_request = true;
     $("#yard_build").val("").trigger("change");
 }

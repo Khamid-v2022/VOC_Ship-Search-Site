@@ -6,7 +6,7 @@ class Ship_m extends MY_Model{
 
 	private $table_name = 'ships';
 
-	public function get_ship_list($ship_name, $ship_type, $yard_build, $selected_key){
+	public function get_ship_list($ship_name, $ship_type, $yard_build, $shipwreck, $wreck_region, $selected_key){
 		$this->db->where("ship_name LIKE '" . $selected_key . "%'");
 		if($ship_name)
 			$this->db->where('ship_name LIKE "' . $ship_name . '"');
@@ -14,6 +14,10 @@ class Ship_m extends MY_Model{
 			$this->db->where('type_of_ship LIKE "' . $ship_type . '"');
 		if($yard_build)
 			$this->db->where('year_build LIKE "' . $yard_build . '"');
+		if($shipwreck)
+			$this->db->where('shipwreck = "' . $shipwreck . '"');
+		if($wreck_region)
+			$this->db->where('wreck_region LIKE "%' . $wreck_region . '%"');
 
 		return $this->db->get("ships")->result_array();
 	}

@@ -40,7 +40,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-3">
 							<label class="control-label" for="ship_name">Ship name:</label>
 							<select class="search-select-2" id="ship_name">
 								<option value=""></option>
@@ -50,7 +50,7 @@
 								?>
 							</select>
 						</div>
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-2">
 							<label class="control-label" for="ship_type">Ship type:</label>
 							<select class="search-select-2" id="ship_type">
 								<option value=""></option>
@@ -60,7 +60,19 @@
 								?>
 							</select>
 						</div>
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-2">
+							<label class="control-label" for="ship_wreck">Shipwreck:</label>
+							<select class="form-control" id="ship_wreck">
+								<option value=""></option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+						<div class="form-group col-md-3">
+							<label class="control-label" for="shipwreck_location">Shipwreck location:</label>
+							<input type="text" id="shipwreck_location" class="form-control">
+						</div>
+						<div class="form-group col-md-2">
 							<label class="control-label" for="yard_build">Yard build:</label>
 							<select class="search-select-2" id="yard_build">
 								<option value=""></option>
@@ -96,8 +108,7 @@
 							<th>Ship number</th>
 							<th>Ship name</th>
 							<th>Type of ship</th>
-							<th>Build year </th>
-							<th>Build yard</th>
+							<th>Fate of ship </th>
 						</tr>
 					</thead>
 					<tbody id="table_content">	

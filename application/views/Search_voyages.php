@@ -130,7 +130,7 @@
 						<th>At Cape</th>
 						<th>From Cape</th>
 						<th>Arrival Date</th>
-						<th>Srrival Port</th>
+						<th>Arrival Port</th>
 					</tr>
 				</thead>
 				<tbody id="table_content">	
