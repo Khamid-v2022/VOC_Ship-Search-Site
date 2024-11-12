@@ -84,11 +84,8 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
-// 배송방법
-define('MODE_1', '2');		//특송
-define('MODE_2', '1');		//택배
 
-// 배달일시
+
 define('OUT_GOODS', 4);
 define('ANYTIME', 0);
 define('RIGHTNOW', 1);
@@ -99,15 +96,3 @@ define('INAFTERNOON', 3);
 define('ADMIN', '0');
 define('WORKER', '1');
 define('BUSSINESS', '2');
-
-// fax 발신번호
-define('FAX_SENDER_NUM', '02-6455-3351');
-// fax테스트 수신번호
-define('FAX_RECEIVER_NUM', '0504-367-5481');
-
-// message 발신번호
-// 상업용 발신번호
-define('MESSAGE_SENDER_NUM', '01075971351');
-
-// message테스트 수신번호
-define('MESSAGE_RECEIVER_NUM', '01094465481');
